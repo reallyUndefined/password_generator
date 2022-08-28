@@ -52,72 +52,74 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1 className="display-1 text-center mb-3">Password Generator</h1>
+    <div className="min-vh-100 d-flex justify-content-center align-items-center">
       <div className="container">
-        <div className="row-1">
-          <Card>
-            <div className="input-group">
-              <span className="input-group-text">Password</span>
-              <input
-                type="text"
-                id="password"
-                className="form-control"
-                value={password}
-                readOnly
-              />
-              <button
-                className="btn btn-secondary"
-                aria-label="copy"
-                onClick={handleCopy}
-              >
-                <FaCopy />
-              </button>
-            </div>
-          </Card>
+        <h1 className="display-1 text-center mb-4">Password Generator</h1>
+        <div className="container">
+          <div className="row-1">
+            <Card>
+              <div className="input-group">
+                <span className="input-group-text">Password</span>
+                <input
+                  type="text"
+                  id="password"
+                  className="form-control"
+                  value={password}
+                  readOnly
+                />
+                <button
+                  className="btn btn-secondary"
+                  aria-label="copy"
+                  onClick={handleCopy}
+                >
+                  <FaCopy />
+                </button>
+              </div>
+            </Card>
 
-          <Card>
-            <Range
-              label="Password length"
-              id="password-len"
-              min={0}
-              max={64}
-              value={pwLen}
-              onChange={handleRange}
-            />
-            <div className="mb-4">
-              <Switch
-                label="use lowercase letters"
-                id="lowercase-ltrs"
-                value={useLowercase}
-                onChange={() => setUseLowercase((prev) => !prev)}
+            <Card>
+              <Range
+                label="Password length"
+                id="password-len"
+                min={0}
+                max={64}
+                value={pwLen}
+                onChange={handleRange}
               />
-              <Switch
-                label="use uppercase letters"
-                id="uppercase-ltrs"
-                value={useUppercase}
-                onChange={() => setUseUppercase((prev) => !prev)}
-              />
-              <Switch
-                label="use numbers"
-                id="use-numbers"
-                value={useNumbers}
-                onChange={() => setUseNumbers((prev) => !prev)}
-              />
-              <Switch
-                label="use special characters"
-                id="use-spl"
-                value={useSpl}
-                onChange={() => setUseSpl((prev) => !prev)}
-              />
-            </div>
-            <button
-              className="btn btn-primary w-50 mx-auto"
-              onClick={generatePassword}
-            >
-              Generate
-            </button>
-          </Card>
+              <div className="mb-4">
+                <Switch
+                  label="use lowercase letters"
+                  id="lowercase-ltrs"
+                  value={useLowercase}
+                  onChange={() => setUseLowercase((prev) => !prev)}
+                />
+                <Switch
+                  label="use uppercase letters"
+                  id="uppercase-ltrs"
+                  value={useUppercase}
+                  onChange={() => setUseUppercase((prev) => !prev)}
+                />
+                <Switch
+                  label="use numbers"
+                  id="use-numbers"
+                  value={useNumbers}
+                  onChange={() => setUseNumbers((prev) => !prev)}
+                />
+                <Switch
+                  label="use special characters"
+                  id="use-spl"
+                  value={useSpl}
+                  onChange={() => setUseSpl((prev) => !prev)}
+                />
+              </div>
+              <button
+                className="btn btn-primary w-50 mx-auto"
+                onClick={generatePassword}
+              >
+                Generate
+              </button>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
