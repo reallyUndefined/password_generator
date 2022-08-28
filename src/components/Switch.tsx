@@ -1,8 +1,10 @@
 interface SwitchProps {
   label: string;
   id: string;
+  value: boolean;
+  onChange: VoidFunction;
 }
-function Switch({ label, id }: SwitchProps) {
+function Switch({ label, id, value, onChange }: SwitchProps) {
   return (
     <div className="form-check form-switch">
       <input
@@ -10,6 +12,8 @@ function Switch({ label, id }: SwitchProps) {
         type="checkbox"
         role="switch"
         id={id}
+        checked={value}
+        onChange={onChange}
       />
       <label className="form-check-label" htmlFor={id}>
         {label}
